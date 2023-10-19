@@ -24,8 +24,8 @@ function addListAfterClick() {
 	}
 }
 
-function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
+function addListAfterKeydown(event) {
+	if (inputLength() > 0 && event.key === 'Enter') {
 		createListElement();
 	}
 }
@@ -55,7 +55,7 @@ allLi.forEach(addButtonToCurrentListItems);
 
 button.addEventListener("click", addListAfterClick);
 
-input.addEventListener("keypress", addListAfterKeypress);
+input.addEventListener("keydown", addListAfterKeydown);
 
 ul.addEventListener('click', markItemAfterClick);
 
